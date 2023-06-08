@@ -1,0 +1,23 @@
+{{- range $i := until ($.Values.amount | int)}}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: application-{{ $i }} 
+  namespace: {{ $.Values.argo.namespace }}
+  labels:
+    app.kubernetes.io/id: '{{ $.Values.uid }}'
+spec:
+  destination:
+    server: 'https://kubernetes.default.svc'
+  project: default
+  source:
+    releaseName: jump-app
+    path: .
+    repoURL: 'https://github.com/romerobu/app-values/dev/ocp3/app{{ $i }} ' # change url and branch to ocp3/app00/...
+    targetRevision: master # branch according to amount of apps per repo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+{{- end }}  
