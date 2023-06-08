@@ -14,7 +14,7 @@ spec:
   source:
     releaseName: jump-app
     path: dev/ocp3/app{{ $i }} 
-    repoURL: 'https://github.com/romerobu/app-values ' # change url and branch to ocp3/app00/...
+    repoURL: 'https://github.com/romerobu/app-values' # change url and branch to ocp3/app00/...
     targetRevision: main # branch according to amount of apps per repo
   syncPolicy:
     automated:
