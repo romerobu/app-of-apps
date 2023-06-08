@@ -3,7 +3,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: application-{{ $i }} 
+  name: application-{{ $i }}-{{ $.Values.set }}
   namespace: {{ $.Values.argo.namespace }}
   labels:
     app.kubernetes.io/id: '{{ $.Values.uid }}'

@@ -2,3 +2,4 @@ amount: 11 # means 10 # must be the same as apps in app-values folder to de depl
 uid: 4856
 argo:
   namespace: gitops-test
+set: 1
