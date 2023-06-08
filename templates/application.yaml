@@ -12,7 +12,6 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: default
   source:
-    releaseName: jump-app
     path: dev/ocp{{ $.Values.set }}/app{{ $i }} 
     repoURL: 'https://github.com/romerobu/app-values' # change url and branch to ocp3/app00/...
     targetRevision: main # branch according to amount of apps per repo
