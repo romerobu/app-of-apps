@@ -1,4 +1,4 @@
-amount: 20
+amount: 10
 uid: 4856
 argo:
   namespace: gitops-test
