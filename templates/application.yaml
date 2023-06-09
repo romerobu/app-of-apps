@@ -1,10 +1,10 @@
 {{- range $i := untilStep 1 ($.Values.amount | int) 1}}
-{{- range $j := untilStep 1 ($.Values.set | int) 1}}
+#{{- range $j := untilStep 1 ($.Values.set | int) 1}}
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: application-{{ $i }}-{{ $j }}
+  name: application-{{ $i }}-{{ $.Values.set }}
   namespace: {{ $.Values.argo.namespace }}
   labels:
     app.kubernetes.io/id: '{{ $.Values.uid }}'
@@ -13,12 +13,12 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: default
   source:
-    path: dev/ocp{{ $i }}/app{{ $j }} 
+    path: dev/ocp{{ $i }}/app{{ $.Values.set }} 
     repoURL: 'https://github.com/romerobu/app-values' # change url and branch to ocp3/app00/...
     targetRevision: main # branch according to amount of apps per repo
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-{{- end }}  
+#{{- end }}  
 {{- end }}  
