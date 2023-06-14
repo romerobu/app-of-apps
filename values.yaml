@@ -1,5 +1,5 @@
-amount: 21 # means 10 # must be the same as apps in app-values folder to de deployed
-uid: 24628
+amount: 2 # means 10 # must be the same as apps in app-values folder to de deployed
+uid: 32368
 argo:
   namespace: gitops-test
-set: 2
+set: 21
