@@ -4,4 +4,4 @@ argo:
   namespace: gitops-test
 set: 4
 annotation:
-  enabled: true
+  enabled: false
