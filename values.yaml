@@ -1,7 +1,7 @@
 amount: 11 # means 10 # must be the same as apps in app-values folder to de deployed
-uid: 8703
+uid: 29679
 argo:
   namespace: gitops-test
 set: 6
 annotation:
-  enabled: true
+  enabled: false
